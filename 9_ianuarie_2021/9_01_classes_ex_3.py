@@ -1,28 +1,44 @@
 import random
 
-
 class Card():
     def __init__(self, card_type, attack=2, defense=4):
         self.card_type = card_type
-        self.attack = attack
-        self.defense = defense
+        self.__attack = attack
+        self.__defense = defense
+
+    @property
+    def attack(self):
+        return self.__attack
+
+    @property
+    def defense(self):
+        return self.__defense
 
     def __repr__(self):
         return f'{self.card_type}'
 
-
+        
 class Player():
     def __init__(self, name="User"):
         self.name = name
-        self.cards = []
+        self.__cards = []
         self.games_won = 0
         self.games_lost = 0
 
+    @property
+    def cards(self):
+        return self.__cards
+
+    @cards.setter
+    def cards(self, card):
+        if isinstance(card, Card):
+            self.__cards.append(card)
+
     def total_attack(self):
-        return sum([card.attack for card in self.cards])
+        return sum([card.attack for card in self.__cards])
 
     def total_defense(self):
-        return sum([card.defense for card in self.cards])
+        return sum([card.defense for card in self.__cards])
 
     def fight(self, opponent):
         if self.total_attack() > opponent.total_defense():
@@ -47,7 +63,7 @@ player2 = Player("User2")
 
 
 def game():
-    for i in range(random.randint(3, 10)):
+    for _ in range(random.randint(3, 10)):
         player1.cards.append(random.choice([elf, goblin]))
         player2.cards.append(random.choice([elf, goblin]))
     print(player1.fight(player2))

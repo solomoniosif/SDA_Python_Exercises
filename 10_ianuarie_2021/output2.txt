@@ -1,0 +1,26 @@
+The word 'this' was found 32 times in 'sample.txt' file.
+The word 'is' was found 32 times in 'sample.txt' file.
+The word 'the' was found 32 times in 'sample.txt' file.
+The word 'line' was found 32 times in 'sample.txt' file.
+The word 'no' was found 32 times in 'sample.txt' file.
+The word '0' was found 1 times in 'sample.txt' file.
+The word '1' was found 1 times in 'sample.txt' file.
+The word '2' was found 1 times in 'sample.txt' file.
+The word '3' was found 1 times in 'sample.txt' file.
+The word '4' was found 1 times in 'sample.txt' file.
+The word '5' was found 1 times in 'sample.txt' file.
+The word '6' was found 1 times in 'sample.txt' file.
+The word '7' was found 1 times in 'sample.txt' file.
+The word '8' was found 1 times in 'sample.txt' file.
+The word '9' was found 3 times in 'sample.txt' file.
+The word '10' was found 2 times in 'sample.txt' file.
+The word '11' was found 2 times in 'sample.txt' file.
+The word '12' was found 2 times in 'sample.txt' file.
+The word '13' was found 2 times in 'sample.txt' file.
+The word '14' was found 2 times in 'sample.txt' file.
+The word '15' was found 2 times in 'sample.txt' file.
+The word '16' was found 2 times in 'sample.txt' file.
+The word '17' was found 2 times in 'sample.txt' file.
+The word '18' was found 2 times in 'sample.txt' file.
+The word '19' was found 2 times in 'sample.txt' file.
+The total number of words found in 'sample.txt': 25.
