@@ -31,6 +31,8 @@ class Product:
     def remove_category(self, category):
         if category in self.categories:
             self.categories.remove(category)
+        else:
+            raise ValueError("Category does not exist.")
 
     def apply_discount(self, discount):
         '''Discount can be either from 0 to 1 (exclusive) or from 1 to 100 (inclusive). Ex. Discount of 0.3 = 30%, and discount of 30 is also 30%'''

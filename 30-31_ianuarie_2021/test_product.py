@@ -133,6 +133,12 @@ class TestProduct(unittest.TestCase):
         self.assertNotIn('Laptops', p.categories)
         self.assertEqual(len(p.categories), 0)
 
+    # * Tests if ValueError is raised when trying to remove a nonexistent category
+    def test_remove_nonexistent_category(self):
+        p = self.create_product_instance()
+        with self.assertRaises(ValueError):
+            p.remove_category('Laptops')
+
     # * Tests the correct output of is_in_stock method
     def test_is_in_stock(self):
         p = self.create_product_instance()
