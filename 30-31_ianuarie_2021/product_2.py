@@ -2,8 +2,8 @@ import numbers
 
 class Product:
     def __init__(self, name, price, in_stock):
-        self._name = name
-        self._price = price
+        self.name = name
+        self.price = price
         self.in_stock = self.validate_bool(in_stock)
         self.categories = list()
 

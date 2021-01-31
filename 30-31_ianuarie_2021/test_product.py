@@ -133,5 +133,14 @@ class TestProduct(unittest.TestCase):
         self.assertNotIn('Laptops', p.categories)
         self.assertEqual(len(p.categories), 0)
 
+    # * Tests the correct output of is_in_stock method
+    def test_is_in_stock(self):
+        p = self.create_product_instance()
+        p.in_stock = False
+        self.assertEqual(p.is_in_stock(), False)
+        p.in_stock = True
+        self.assertEqual(p.is_in_stock(), True)
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
