@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="static/style.css"/>
+    <title>Population Register</title>
+</head>
+<body>
+	<ul class="nav">
+		<li><a href={{ url_for('index') }}>Add new person</a></li>
+		<li></li><a href={{ url_for('search') }}>Search register</a></li>
+	</ul>
+	<h1 id="title">Population Register</h1>
+
+	<!-- Its the form where a new person can be added to the database -->
+
+	<div class="form-container">
+		<form class="form-inline" action="" method="POST">
+			<label>First Name</label>
+			<input type="text" id="first_name" placeholder="Enter First Name" name="first_name">
+			<label>Last Name</label>
+			<input type="text" id="last_name" placeholder="Enter Last Name" name="last_name">
+			<label>Birthdate</label>
+			<input type="date" id="birthdate" placeholder="Enter Birthdate" name="birthdate">
+			<button type="submit" id="submit">Add person to register</button>
+		</form>
+	</div>
+
+	<!-- The table where all the data from the DB will be appeared -->
+
+	<div class="container">
+		<table class="table">
+			<tr>
+				<th colspan="4" id="table-title">All records</th>
+			</tr>
+			<tr id="table-headers">
+				<td>No.</td>
+				<td>First Name</td>
+				<td>Last Name</td>
+				<td>Birthdate</td>
+			</tr>
+
+			<!-- The register is a variable containing all the persons from the DB. -->
+			
+			{% for person in register %}
+			<tr>
+				<td>{{person._id}}</td>
+				<td>{{person.first_name}}</td>
+				<td>{{person.last_name}}</td>
+				<td>{{person.birthdate}}</td>
+			</tr>
+			{% endfor %}
+
+		</table>
+	</div>
+</body>
+</html>

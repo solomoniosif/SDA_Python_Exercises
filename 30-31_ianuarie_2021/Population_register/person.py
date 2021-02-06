@@ -1,5 +1,6 @@
 import datetime
 
+
 class Person:
     def __init__(self, first_name: str, last_name: str, birthdate: datetime.date):
         self.first_name = first_name
@@ -41,7 +42,7 @@ class Person:
         if self.validate_birthdate(date):
             self._birthdate = date
         else:
-            raise ValueError("InvalidBirthdate must be of datetime.date type and the date must be from 1/01/1900 to current day.")
+            raise ValueError("Birthdate must be of datetime.date type and the date must be from 1/01/1900 to current day.")
 
     def __str__(self):
         return f"{self._first_name} {self._last_name}, born in {self._birthdate.strftime('%d %B %Y')}."

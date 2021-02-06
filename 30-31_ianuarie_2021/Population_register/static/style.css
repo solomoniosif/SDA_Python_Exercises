@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+
+body {
+	 padding: 24px;
+	 font-family: 'Source Sans Pro', sans-serif;
+	 background-color: #c3dfeb;
+	 margin: 0;
+}
+h2 {
+	 margin: 0;
+	 text-align: center;
+	 font-size: 1.2em;
+	 padding-bottom: 20px;
+}
+label {
+	margin-right: 5px;
+	margin-left: 22px;
+}
+
+input {
+	font-size: 0.7em;
+	height: auto;
+	width: auto;
+}
+tr {
+	height: 30px;
+}
+a:link{
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
+a:visited{
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
+a:hover{
+	color: rgb(255, 255, 255);
+}
+a:active{
+	color: rgb(255, 255, 255);
+}
+.container {
+	padding-top: 25px;
+	max-width: 1072px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.form-container {
+	background-color:  rgba(75, 75, 75, 0.2);
+	padding: 34px;
+	max-width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 1.5em;
+	justify-content: center;
+	align-items: center;
+	border-width: 2px;
+	border-style: solid;
+	border-color:  rgba(75, 75, 75, 0.37);;
+}
+.table {
+	border-width: 2px;
+	border-style: solid;
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+}
+.nav {
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    display:flex;
+    padding: 0.5rem;
+    color:black;
+	background:rgba(247, 243, 243, 0.089);
+	justify-content: center;
+	align-items: center;
+	border-left: none;
+	text-transform: uppercase;
+}
+.nav li{
+    display:inline;
+}
+.nav a{
+    display:inline-block;
+	padding: 10px 25px 10px 25px;
+	font-size: 1.3em;
+}
+#title {
+	text-align: center;
+	padding: 24px;
+	font-size: 7em;
+	margin: 0;
+	color: #fff;
+}
+#table-title {
+	background-color: rgba(75, 75, 75, 0.13);
+	font-size: 1.3em;
+}
+#table-headers {
+	font-weight: bold;
+	background-color: rgba(75, 75, 75, 0.13);
+}
+#submit {
+	background-color:  #f1bd78;
+	display: block;
+	margin-top: 33px;
+	width: 280px;
+	height: 33px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 0.75em;
+	font-weight: bold;
+}
