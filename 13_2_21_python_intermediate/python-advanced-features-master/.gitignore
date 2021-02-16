@@ -1,0 +1,13 @@
+.vscode/
+.venv/
+.idea/
+venv/
+__pycache__/
+
+*.pyc
+*.pyo
+*.log
+
+12-serialization/data/people-no-email.csv
+12-serialization/data/exercise-02.csv
+12-serialization/data/exercise-02.json

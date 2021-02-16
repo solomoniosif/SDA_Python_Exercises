@@ -1,0 +1,43 @@
+
+[
+    {
+        "id": 1,
+        "first_name": "Jenn",
+        "last_name": "Wince",
+        "gender": "Female",
+        "email": "jwince0@mediafire.com",
+        "job_title": "Recruiting Manager"
+    },
+    {
+        "id": 2,
+        "first_name": "Finn",
+        "last_name": "Cucuzza",
+        "gender": "Male",
+        "email": "fcucuzza1@ucsd.edu",
+        "job_title": "VP Accounting"
+    },
+    {
+        "id": 3,
+        "first_name": "Harriett",
+        "last_name": "Durdan",
+        "gender": "Female",
+        "email": "hdurdan2@alexa.com",
+        "job_title": "Office Assistant II"
+    },
+    {
+        "id": 4,
+        "first_name": "Danella",
+        "last_name": "Shirtliff",
+        "gender": "Female",
+        "email": "dshirtliff3@youtube.com",
+        "job_title": "Physical Therapy Assistant"
+    },
+    {
+        "id": 5,
+        "first_name": "Maren",
+        "last_name": "O'Brien",
+        "gender": "Female",
+        "email": "mobrien4@desdev.cn",
+        "job_title": "Internal Auditor"
+    }
+]
