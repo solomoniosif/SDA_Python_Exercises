@@ -6,7 +6,7 @@ import datetime
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Register.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Population_register.sqlite3'
 
 db = SQLAlchemy(app)
 
@@ -47,8 +47,8 @@ def index():
 def search():
     if request.method == 'POST':
         data = request.form
-        first_name = data['first_name']
-        last_name = data['last_name']
+        first_name = Person.format_name(data['first_name'])
+        last_name = Person.format_name(data['last_name'])
         if first_name and last_name:
             query = PersonDb.query.filter_by(first_name=first_name, last_name=last_name)
         elif first_name and not last_name:

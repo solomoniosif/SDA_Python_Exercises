@@ -1,7 +1,8 @@
+""" TODO: Scrieti o iererhie de clase care sa includa urmatoarele clase de animale:
+unicelulare, multicelulare, vertebrate, nevertebrate, pesti, mamifere, pasari, serpi, soparle, gandaci, parameci.
+Bonus: adaugati o interfata audio pentru metodele noastre"""
 
-# TODO: Scrieti o iererhie de clase care sa includa urmatoarele clase de animale:
-# unicelulare, multicelulare, vertebrate, nevertebrate, pesti, mamifere, pasari, serpi, soparle, gandaci, parameci.
-# Bonus: adaugati o interfata audio pentru metodele noastre
+from abc import abstractmethod
 
 
 class Organism:
@@ -15,7 +16,7 @@ class Organism:
 
 class Prokaryote(Organism):
     def __init__(self, name):
-        self.name = name
+        super().__init__(name)
 
     @property
     def enclosed_cell_nucleus(self):
@@ -29,7 +30,7 @@ class Prokaryote(Organism):
 class Eukaryote(Organism):
     def __init__(self, name):
         self.name = name
-    
+
     @property
     def enclosed_cell_nucleus(self):
         return True
@@ -67,7 +68,6 @@ class Animal(Multicellular, Eukaryote):
         return True
 
 
-
 class Invertebrate(Animal):
     def __init__(self, name):
         super().__init__(name)
@@ -75,7 +75,6 @@ class Invertebrate(Animal):
     @property
     def has_vertebral_column(self):
         return False
-
 
 
 class Vertebrate(Animal):
@@ -94,7 +93,7 @@ class Reptile(Vertebrate):
     @property
     def is_warm_blooded(self):
         return False
-    
+
 
 class Fish(Vertebrate):
     def __init__(self, name):
@@ -103,11 +102,10 @@ class Fish(Vertebrate):
     @property
     def breaths_underwater(self):
         return True
-    
+
     @property
     def is_warm_blooded(self):
         return False
-
 
 
 class Bird(Vertebrate):
@@ -126,10 +124,9 @@ class Bird(Vertebrate):
     def is_oviparous(self):
         return True
 
-    
 
 class Snake(Reptile):
-    def __init__(self, name, is_oviparous = True):
+    def __init__(self, name, is_oviparous=True):
         super().__init__(name)
         self.is_oviparous = is_oviparous
 
@@ -146,6 +143,7 @@ class Lizard(Reptile):
     @property
     def has_limbs(self):
         return True
+
 
 class Insect(Invertebrate):
     def __init__(self, name):
@@ -174,7 +172,6 @@ class Mammal(Vertebrate):
 class Human(Mammal):
     def __init__(self, name):
         super().__init__(name)
-
 
 
 def get_all_superclasses(org_class):
