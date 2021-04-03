@@ -230,3 +230,29 @@ print(containers)
 [<Container (1 elem)>, <Container (2 elem)>, <Container (1 elem)>]
 ```
 
+```python
+import csv
+import json
+
+
+class CsvToJsonAdapter:
+    def __init__(self, csv_file):
+        self.csv_file = csv_file
+        self.data_dict = {}
+
+    def save_to_json(self):
+        with open(self.csv_file) as f:
+            csv_reader = csv.reader(f)
+            calc, time, temp = csv_reader.__next__()
+
+            for i, row in enumerate(csv_reader):
+                self.data_dict[i] = {calc: row[0], time: row[1], temp: row[2]}
+
+        with open('data.json', 'w') as output_file:
+            json.dump(self.data_dict, output_file, indent=4)
+
+
+if __name__ == '__main__':
+    adapter = CsvToJsonAdapter('data.csv')
+    adapter.save_to_json()
+```
