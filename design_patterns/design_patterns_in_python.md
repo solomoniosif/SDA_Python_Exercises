@@ -154,3 +154,79 @@ if __name__ == "__main__":
 Shipping Vase in 3 days for 15.0 via RoyalMail
 Shipping Flamingo in 30 days for 1.0 via ShadyCourier
 ```
+
+## Structural Patterns
+
+#### *What are structural patterns?*
+
+Structural patterns make connecting objects easier, or allow to compose them into logical structures.
+
+### 1. Decorator
+
+Their main feature is extending object capabilities without modifying them.
+
+```python
+import time
+
+
+class TimerDecorator:
+    def __init__(self, func):
+        self.times = []
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        start_time = time.time()
+        result = self.func(*args, **kwargs)
+        delta_time = time.time() - start_time
+        self.times.append(delta_time)
+        print(f"Function {self.func.__name__} has been executed in {delta_time}s "
+              f"with the following arguments: {args} {kwargs}")
+        return result
+
+
+@TimerDecorator
+def calculate_product_a_million_times(small_number):
+    for _ in range(1_000_000):
+        large_number = 4 ** 39
+        _ = large_number * small_number + small_number ** 39
+
+
+if __name__ == "__main__":
+    calculate_product_a_million_times(10)
+```
+
+```
+Function calculate_product_a_million_times has been executed in 0.40529298782348633s with the following arguments: (10,) {}
+```
+
+### 2. Adapter
+
+- Adapter enables communication with a class, when it does not implement methods or fields required by the class
+  attempting communication
+- It is often used to adapt to classes provided by external libraries, since there is no easy way to modify them
+
+```python
+class Container:
+    def __init__(self, elem):
+        self.elements = list(range(elem))
+
+    def __repr__(self):
+        return f"<Container({len(self.elements)}elem)>"
+
+
+class DictAdapter:
+    def __init__(self, d):
+        self.d = d
+
+    def __repr__(self):
+        return f"<Container({len(self.d)}elem)>"
+
+
+containers = [Container(1), Container(2), DictAdapter({"A": 1})]
+print(containers)
+```
+
+``` 
+[<Container (1 elem)>, <Container (2 elem)>, <Container (1 elem)>]
+```
+
